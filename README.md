@@ -14,6 +14,6 @@
 
 ## installation
 
-`cli
+```cli
 pip intall -r requirements.txt
-`
+```
