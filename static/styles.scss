@@ -1,0 +1,161 @@
+$primary-color: #007bff;
+$primary-hover: #0056b3;
+$success-color: #28a745;
+$success-hover: #218838;
+$titled-color: #333;
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: $titled-color;
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: $titled-color;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $titled-color;
+}
+
+.navbar {
+  background-color: $primary-color;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.navbar .menu {
+  display: flex;
+}
+
+.navbar .menu a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary-hover;
+  }
+}
+
+.content {
+  width: 80%;
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: $primary-color;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  color: $success-color;
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+
+  th,
+  td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: $primary-color;
+    color: #fff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $primary-hover;
+    }
+  }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  input[type="text"] {
+    width: 80%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  input[type="submit"] {
+    background-color: $success-color;
+    color: #fff;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $success-hover;
+    }
+  }
+}
+
+.footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: $primary-color;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $primary-hover;
+  }
+}

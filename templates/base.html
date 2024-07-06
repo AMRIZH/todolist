@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',
+      filename='styles.css')}}"
+    />
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <a href="#" class="logo">MyWebsite</a>
+      <div class="menu">
+        <a href="/">Home</a>
+        <a href="/task">task</a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    {% block body %}{% endblock %}
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>
+        &copy; 2024 Amri Zadi. All rights reserved. |
+        <a href="#privacy">Privacy Policy</a> |
+        <a href="#terms">Terms of Service</a>
+      </p>
+    </div>
+  </body>
+</html>
