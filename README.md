@@ -11,3 +11,9 @@
 ## my website
 
 [to do list](http://micinlezatoz.pythonanywhere.com)
+
+## installation
+
+`cli
+pip intall -r requirements.txt
+`
