@@ -1,10 +1,18 @@
-{% extends "base.html" %} {% block head %}<title>Learning Flask</title>{%
-endblock %} {% block body %}
-<div class="container">
-  <h1>Learning Flask</h1>
+{% extends "base-guest.html" %}
+
+{% block head %}
+<title>MyList App</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1>My List App</h1>
   <p class="description">
-    This is a simple web application that demonstrates how to build a Flask
-    application.
+    This is a simple web application that built using Flask. <br>
+    You can make a To Do List and Grocery List.
   </p>
+  <div class="row">
+    <a class="btn" href="/login">Login/Register</a>
+  </div>
 </div>
 {% endblock %}

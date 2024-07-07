@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="/" class="logo">MyList</a>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="/login">login</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  {% block body %}{% endblock %}
+
+  <!-- footer -->
+  <div class="footer">
+    <p>
+      &copy; 2024 AMRIZH. All rights reserved. |
+      <a href="https://github.com/AMRIZH/todolist?tab=MIT-1-ov-file" target="_blank">MIT License</a> | 
+      <a href="https://github.com/AMRIZH/todolist" target="_blank">View on Github</a>
+    </p>
+  </div>
+  </body>
+</html>
+

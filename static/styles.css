@@ -71,6 +71,27 @@ h3 {
   text-align: center;
 }
 
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+.btn:hover {
+  background-color: #0056b3;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -103,23 +124,30 @@ form {
   align-items: center;
   flex-direction: column;
 }
-form input[type=text] {
+form input[type=text], form input[type=password] {
   width: 80%;
   padding: 0.5rem;
   margin-bottom: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
-form input[type=submit] {
+form input[type=submit], form .btn-login, form .btn-register {
   background-color: #28a745;
   color: #fff;
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: 0.5rem;
 }
-form input[type=submit]:hover {
+form input[type=submit]:hover, form .btn-login:hover, form .btn-register:hover {
   background-color: #218838;
+}
+
+.error-message {
+  color: red;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
 
 .footer {

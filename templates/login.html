@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Login</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+  <h1>Welcome</h1>
+  <p class="description">Please login to continue</p>
+  <form id="auth-form" action="{{url_for('login_register')}}" method="POST">
+    <input type="text" name="username" placeholder="username" class="input-field">
+    <input type="password" name="password" placeholder="password" class="input-field">
+    <input type="hidden" name="action" id="action" value="login">
+    <div class="row">
+      <input type="submit" value="Login" class="btn btn-login" onclick="setActionForm('login')">
+      <input type="button" value="Register" class="btn btn-register" onclick="setActionForm('register')">
+    </div>
+    {% if message %}
+    <p class="error-message">{{ message }}</p>
+    {% endif %}
+  </form>
+</div>
+
+<!-- make login form same as register form -->
+<script>
+  function setActionForm(action) {
+    let form = document.getElementById('auth-form');
+    document.getElementById('action').value = action;
+    form.submit();
+  }
+</script>
+{% endblock %}

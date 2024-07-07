@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}
+<title>Dashboard</title>
+{% endblock %}
+{% block body %}
+<div class="container">
+  <h1>Welcome, {{username}}</h1>
+  <p class="description">
+    This is a simple web application that you can make To Do List and Grocery List
+  </p>
+  <div class="row">
+    <a class="btn" href="/task">Make Todo List</a>
+    <a class="btn" href="/buy">Make Grocery List</a>
+  </div>
+</div>
+{% endblock %}

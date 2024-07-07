@@ -1,16 +1,17 @@
-# My Flask Learning
+# Flask Python Project - To Do List with Autentication System
 
-## Pyhton Hosting
+## Free Pyhton Hosting
 
-[pyhton anywhere by anaconda](https://www.pythonanywhere.com/user/micinlezatoz/webapps/#tab_id_micinlezatoz_pythonanywhere_com)
+- [python anywhere by anaconda](https://www.pythonanywhere.com)
 
-## Tutorial video
+## Tutorial video (not mine)
 
-[code with josh](https://www.youtube.com/watch?v=Fr2MxT9M0V4)
+- [making to do list](https://www.youtube.com/watch?v=45P3xQPaYxc)
+- [authentication](https://www.youtube.com/watch?v=Fr2MxT9M0V4)
 
 ## my website
 
-[to do list](http://micinlezatoz.pythonanywhere.com)
+- [to do list](http://mylist.pythonanywhere.com)
 
 ## installation
 
