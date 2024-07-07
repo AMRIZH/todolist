@@ -21,6 +21,7 @@ class Task(db.Model):
     content = db.Column(db.String(100), nullable=False)
     completed = db.Column(db.Integer, default=0)
     created = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Foreign key to user
 
     def __repr__(self): # primary key of the table
         return f'Task {self.id}'
@@ -30,6 +31,7 @@ class Items(db.Model):
     content = db.Column(db.String(100), nullable=False)
     completed = db.Column(db.Integer, default=0)
     created = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Foreign key to user
 
     def __repr__(self): # primary key of the table
         return f'Item {self.id}'
@@ -55,23 +57,23 @@ with app.app_context():
 # task page
 @app.route('/task', methods=['GET', 'POST'])
 def taskpage():
-    # add task
-    if request.method == 'POST':
-        task_content = request.form['content'] # get the content from the form
-        new_task = Task(content=task_content) # create a new task
+    if 'username' in session: # Check if user is logged in
+        if request.method == 'POST': # Check if the form is submitted
+            task_content = request.form['content'] # Get the content from the form
+            new_task = Task(content=task_content, user_id=session['user_id'])  # Assign current user's ID
+            try: # Try to add the new task to the database
+                db.session.add(new_task)
+                db.session.commit()
+                return redirect('/task')
+            except Exception as e:
+                print(f"Error: {e}")
+                return 'There was an issue adding your task'
 
-        try:
-            db.session.add(new_task) # establish connection with database and add the new task
-            db.session.commit() # commit the changes
-            return redirect('/task') # redirect to the task page
-        except Exception as e:
-            print(f"Error: {e}")
-            return 'There was an issue adding your task'
-    # see all current task
-    else:
-        tasks = Task.query.order_by(Task.created).all() # get all the tasks from the database
-        return render_template('task.html', tasks=tasks) # render the task page with the tasks 
-    # return render_template('task.html')
+        else: # If the form is not submitted
+            tasks = Task.query.filter_by(user_id=session['user_id']).order_by(Task.created).all()
+            return render_template('task.html', tasks=tasks)
+    return redirect(url_for('home'))
+
 
 # delete task
 @app.route('/delete/<int:id>')
@@ -104,22 +106,23 @@ def update(id: int):
 # To buy list
 @app.route('/buy', methods=['GET', 'POST'])
 def buyPage():
-    # add item
-    if request.method == 'POST':
-        item_content = request.form['content'] # get the content from the form
-        new_item = Items(content=item_content) # create a new buy
-
-        try:
-            db.session.add(new_item) # establish connection with database and add the new buy
-            db.session.commit() # commit the changes
-            return redirect('/buy') # redirect to the buy page
-        except Exception as e:
-            print(f"Error: {e}")
-            return 'There was an issue adding the item'
-    # see all current item
-    else:
-        items = Items.query.order_by(Items.created).all() # get all the items from the database
-        return render_template('buy.html', items=items) # render the buy page with the items 
+    if 'username' in session:  # Check if user is logged in
+        # add item
+        if request.method == 'POST':
+            item_content = request.form['content']  # get the content from the form
+            new_item = Items(content=item_content, user_id=session['user_id'])  # create a new item for current user
+            try:
+                db.session.add(new_item)  # establish connection with database and add the new item
+                db.session.commit()  # commit the changes
+                return redirect('/buy')  # redirect to the buy page
+            except Exception as e:
+                print(f"Error: {e}")
+                return 'There was an issue adding the item'
+        # see all current item
+        else:
+            items = Items.query.filter_by(user_id=session['user_id']).order_by(Items.created).all()
+            return render_template('buy.html', items=items)  # render the buy page with the items
+    return redirect(url_for('home'))
 
 # delete task
 @app.route('/deleteitem/<int:id>')
