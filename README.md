@@ -1,6 +1,6 @@
 # Flask Python Project - To Do List with Autentication System
 
-## Free Pyhton Hosting
+## Free Python Hosting
 
 - [pythonanywhere by Anaconda](https://www.pythonanywhere.com)
 
