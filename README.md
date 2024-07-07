@@ -2,20 +2,20 @@
 
 ## Free Pyhton Hosting
 
-- [python anywhere by anaconda](https://www.pythonanywhere.com)
+- [pythonanywhere by Anaconda](https://www.pythonanywhere.com)
 
 ## Tutorial Video (not mine)
 
-- [making to do list](https://www.youtube.com/watch?v=45P3xQPaYxc)
-- [authentication](https://www.youtube.com/watch?v=Fr2MxT9M0V4)
+- [Making To Do List](https://www.youtube.com/watch?v=45P3xQPaYxc)
+- [Authentication System](https://www.youtube.com/watch?v=Fr2MxT9M0V4)
 
 ## My Website
 
 - [http://yourlist.pythonanywhere.com](http://yourlist.pythonanywhere.com)
 
-## installation on PythonAnywhere
-1. make account or login
-2. open consoles tab and bash
+## Installation on PythonAnywhere
+1. Make account or login
+2. Open consoles tab and open bash
 - create virtual environment
   ```cli
   mkvirtualenv myvirtualenv --python=/usr/bin/python3.10
@@ -32,7 +32,8 @@
   ```cli
   pip install -r requirements.txt
   ```
-3. open WEB tab and add a new web app (choose manual configuration, python 3.10)
+3. open WEB tab
+- add a new web app (choose manual configuration, python 3.10)
 - scroll below and add the source code 
   ```path
   home/username/todolist
@@ -52,6 +53,6 @@
   /home/username/.virtualenvs/myvirtualenv
   ```
 - scroll to top and reload username.pythonanywhere.com
-- Your Website is ready
+- Run Your Website
 
 Note : change the 'username' with your pythonanywhere username.
